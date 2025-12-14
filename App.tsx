@@ -1,5 +1,5 @@
 import React from 'react';
-import { SOCIAL_LINKS, PROFILE_IMAGE_URL } from './constants';
+import { SOCIAL_LINKS, PROFILE_IMAGE_URL, USER_NAME } from './constants';
 import SocialIcon from './components/SocialIcon';
 
 const App: React.FC = () => {
@@ -12,17 +12,17 @@ const App: React.FC = () => {
         {/* LEFT SIDE */}
         <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center gap-12 overflow-hidden">
           
-          {/* NAME – TWO LINES, SAFE */}
-          <div className="max-w-full">
-            <h1 className="text-white font-extrabold tracking-tight leading-none">
-              <span className="block text-5xl sm:text-6xl lg:text-7xl whitespace-nowrap">
-                Mohamed
-              </span>
-              <span className="block text-5xl sm:text-6xl lg:text-7xl whitespace-nowrap">
-                Osmaan
-              </span>
-            </h1>
-          </div>
+          {/* NAME – ONE LINE, STRAIGHT, NO OVERFLOW */}
+          <h1
+            className="
+              text-white font-extrabold tracking-tight
+              whitespace-nowrap
+              text-[clamp(2.2rem,4.5vw,4rem)]
+              max-w-full overflow-hidden
+            "
+          >
+            {USER_NAME}
+          </h1>
 
           {/* CONNECT */}
           <div className="pt-6 border-t border-white/10">
@@ -60,7 +60,7 @@ const App: React.FC = () => {
           <div className="relative w-full h-full aspect-[1000/1056]">
             <img
               src={PROFILE_IMAGE_URL}
-              alt="Mohamed Osmaan"
+              alt={USER_NAME}
               className="w-full h-full object-cover object-top"
             />
           </div>
