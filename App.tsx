@@ -18,9 +18,9 @@ const App: React.FC = () => {
         {/* Left Side: Text Content */}
         <div className="w-full md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center space-y-8 order-2 md:order-1">
           <div className="space-y-4">
-            {/* Name Only */}
+            {/* Name Only – One Line */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-              {USER_NAME}
+              Mohamed Osmaan
             </h1>
           </div>
 
@@ -29,7 +29,6 @@ const App: React.FC = () => {
             <h2 className="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4">
               Connect With Me
             </h2>
-            {/* Flex container: One line, No scroll, Justify Between (Fit screen) */}
             <div className="flex flex-row flex-nowrap justify-between items-center w-full">
               {SOCIAL_LINKS.map((link) => (
                 <a
@@ -44,7 +43,6 @@ const App: React.FC = () => {
                     platform={link.platform} 
                     className="w-4 h-4 sm:w-5 sm:h-5 text-slate-300 group-hover:text-white transition-colors" 
                   />
-                  {/* Tooltip */}
                   <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-slate-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl border border-white/10 z-50">
                     {link.username}
                   </span>
@@ -55,19 +53,16 @@ const App: React.FC = () => {
         </div>
 
         {/* Right Side: Profile Image */}
-        {/* Strictly maintaining the 1000x1056 aspect ratio */}
         <div className="w-full md:w-1/2 bg-slate-900 order-1 md:order-2 relative group overflow-hidden">
           <div className="w-full h-full flex items-center justify-center bg-slate-800">
-             {/* Aspect Ratio Container */}
-             <div className="relative w-full aspect-[1000/1056] md:h-full md:w-auto md:aspect-auto">
-                <img 
-                  src={PROFILE_IMAGE_URL} 
-                  alt={USER_NAME} 
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
-                {/* Gradient Overlay for better text contrast if needed, or just aesthetic */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-             </div>
+            <div className="relative w-full aspect-[1000/1056] md:h-full md:w-auto md:aspect-auto">
+              <img 
+                src={PROFILE_IMAGE_URL} 
+                alt={USER_NAME} 
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
           </div>
         </div>
 
