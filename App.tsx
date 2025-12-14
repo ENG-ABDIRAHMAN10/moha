@@ -4,23 +4,25 @@ import SocialIcon from './components/SocialIcon';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 sm:p-8 bg-[#0b1624] relative overflow-hidden font-sans">
+    <div className="min-h-screen flex items-center justify-center p-4 sm:p-8 bg-[#0b1624] font-sans">
       
-      {/* Main Card */}
+      {/* MAIN CARD */}
       <main className="w-full max-w-7xl bg-[#0f1e2f] rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
         
         {/* LEFT SIDE */}
-        <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center space-y-10">
+        <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center gap-12 overflow-hidden">
           
-          {/* NAME – VERTICAL (LIKE IMAGE) */}
-          <h1 className="text-white font-extrabold leading-tight tracking-tight">
-            <span className="block text-5xl sm:text-6xl lg:text-7xl">
-              Mohamed
-            </span>
-            <span className="block text-5xl sm:text-6xl lg:text-7xl">
-              Osmaan
-            </span>
-          </h1>
+          {/* NAME – TWO LINES, SAFE */}
+          <div className="max-w-full">
+            <h1 className="text-white font-extrabold tracking-tight leading-none">
+              <span className="block text-5xl sm:text-6xl lg:text-7xl whitespace-nowrap">
+                Mohamed
+              </span>
+              <span className="block text-5xl sm:text-6xl lg:text-7xl whitespace-nowrap">
+                Osmaan
+              </span>
+            </h1>
+          </div>
 
           {/* CONNECT */}
           <div className="pt-6 border-t border-white/10">
@@ -28,7 +30,7 @@ const App: React.FC = () => {
               Connect With Me
             </p>
 
-            <div className="flex items-center gap-4">
+            <div className="flex gap-4 flex-wrap">
               {SOCIAL_LINKS.map((link) => (
                 <a
                   key={link.platform}
